@@ -5,10 +5,17 @@ text = """
 1. В @richrait_bot купить разбан и написать админам за ссылкой обратно
 2. Пригласите 5 человек в чат за ссылкой напишите @L4rrka или @nikita_permafia
 3. Вы можете играть в других чатах сетки, за ссылкой обратитесь к @L4rrka или @nikita_permafia
+
+class AutoMessageMod(loader.Module):
+    "Авто-уведомления пользователя о бане"
+    strings = {'name':'AutoMessage'}
+
+    async def watcher(self, message):
+        "???"
         fromid = message.sender_id
         chatid = message.chat_id
         if chatid == -1001558330769 and fromid == 1939036535:
-            if "(6 из 6)" and "заблокирован" in message.raw_text:
+            if "(6 из 6)" and "Заблокирован" in message.raw_text:
                 userid = message.entities[0].user_id
                 await message.client.send_message(userid, text)
                 userent = await message.client.get_entity(userid)
@@ -18,4 +25,4 @@ text = """
                     username = str(userent.first_name) + " " + str(userent.last_name)
                 else:
                     username = str(userent.last_name)
-                await message.client.send_message(1939036535, f'Действие: Заблокирован 🚷 <a href="tg://user?id={userid}">{username}</a> ')
+                await message.client.send_message(1939036535, f'Действие: Заблокирован 🚷 <a href="tg://user?id={userid}">{username}</a> за 6 варнов')
