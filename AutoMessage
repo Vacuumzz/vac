@@ -7,7 +7,7 @@ text = """
 3. Вы можете играть в других чатах сетки, за ссылкой обратитесь к @L4rrka или @nikita_permafia
 
 class AutoMessageMod(loader.Module):
-    """Авто-уведомления пользователя о бане"""
+    "Авто-уведомления пользователя о бане"
     strings = {'name': 'AutoMessage'}
 
     async def watcher(self, message):
