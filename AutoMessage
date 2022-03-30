@@ -16,7 +16,7 @@ class AutoMessageMod(loader.Module):
         fromid = message.sender_id
         chatid = message.chat_id
         if chatid == -1001558330769 and fromid == 1939036535:
-            if "(6 из 6)" and "заблокирован" in message.raw_text:
+            if "(6 из 6)" and "Заблокирован" in message.raw_text:
                 userid = message.entities[0].user_id
                 await message.client.send_message(userid, text)
                 userent = await message.client.get_entity(userid)
