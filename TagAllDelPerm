@@ -1,0 +1,19 @@
+from .. import loader, utils
+
+tag_id = [5287789025]
+
+
+class TagAllDelete(loader.Module):
+    """Авто-удаление сообщений Зазывала tag-bot"""
+    strings = {'name': 'TagAllDelete'}
+
+    async def watcher(self, message):
+        """Авто-удаление сообщений TagAll для чатов Permafia"""
+        fromid = message.from_id
+        msg = message.raw_text.split()
+        if fromid in tag_id:
+            if 'неактивности' not in msg:
+                if 'призывает' not in msg:
+                    if 'снова' not in msg:
+                        if len(msg) >= 2:
+                            await message.delete()
