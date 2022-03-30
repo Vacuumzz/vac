@@ -5,7 +5,6 @@ text = """
 1. В @richrait_bot купить разбан и написать админам за ссылкой обратно
 2. Пригласите 5 человек в чат за ссылкой напишите @L4rrka или @nikita_permafia
 3. Вы можете играть в других чатах сетки, за ссылкой обратитесь к @L4rrka или @nikita_permafia
-Выбирай вариант и пиши
 
 class AutoMessageMod(loader.Module):
     """Авто-уведомления пользователя о бане"""
@@ -26,4 +25,4 @@ class AutoMessageMod(loader.Module):
                     username = str(userent.first_name) + " " + str(userent.last_name)
                 else:
                     username = str(userent.last_name)
-                await message.client.send_message(1939036535, f'🚫Забанил долбоеба <a href="tg://user?id={userid}">{username}</a> за 4 варна')
+                await message.client.send_message(1939036535, f'🚫Заблокирован <a href="tg://user?id={userid}">{username}</a> за 6 варнов')
