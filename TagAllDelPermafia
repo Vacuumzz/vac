@@ -3,7 +3,7 @@ from .. import loader, utils
 tag_id = [5287789025]
 
 
-class TagAllDelete(loader.Module):
+class TagAllDeleteMod(loader.Module):
     """Авто-удаление сообщений Зазывала tag-bot"""
     strings = {'name': 'TagAllDelete'}
 
