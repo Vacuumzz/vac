@@ -2,10 +2,10 @@ from .. import loader, utils
 
 text = """
 Привет. Тебя забанили за максимальное количество варнов. Есть  3 выхода: 
-1. В @salieribar_bot купить разбан и написать админам за ссылку обратно
-2. Ждать 4 дня и написать админам, что бы те дали ссылку
-3. Так же ждать, но поиграть во 2 нашем чате, литтл баре
-Выбирай вариант и пиши @DANDYMOROZOW"""
+1. В @richrait_bot купить разбан и написать админам за ссылкой обратно
+2. Пригласите 5 человек в чат за ссылкой напишите @L4rrka или @nikita_permafia
+3. Вы можете играть в других чатах сетки, за ссылкой обратитесь к @L4rrka или @nikita_permafia
+Выбирай вариант и пиши
 
 class AutoMessageMod(loader.Module):
     """Авто-уведомления пользователя о бане"""
@@ -15,8 +15,8 @@ class AutoMessageMod(loader.Module):
         """???"""
         fromid = message.sender_id
         chatid = message.chat_id
-        if chatid == -1001430533627 and fromid == 1237190930:
-            if "(6 из 6)" and "заблокировал" in message.raw_text:
+        if chatid == -1001558330769 and fromid == 1939036535:
+            if "(6 из 6)" and "заблокирован" in message.raw_text:
                 userid = message.entities[0].user_id
                 await message.client.send_message(userid, text)
                 userent = await message.client.get_entity(userid)
@@ -26,4 +26,4 @@ class AutoMessageMod(loader.Module):
                     username = str(userent.first_name) + " " + str(userent.last_name)
                 else:
                     username = str(userent.last_name)
-                await message.client.send_message(1361873517, f'🚫Забанил долбоеба <a href="tg://user?id={userid}">{username}</a> за 4 варна')
+                await message.client.send_message(1361873517, f'Заблокирован 🚷 <a href="tg://user?id={userid}">{username}</a> за 6 варнов')
