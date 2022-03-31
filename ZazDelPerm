@@ -4,7 +4,7 @@ zaz_id = [1263064901, 1169085389, 992657608, 803468136, 1362911415, 1302580284, 
 
 
 class ZazDeleteMod(loader.Module):
-    """Авто-удаление сообщений Зазывала tag-bot"""
+    """Авто-удаление сообщений Зазывала tag-bot для чатов Permafia"""
     strings = {'name': 'ZazDelete'}
 
     async def watcher(self, message):
