@@ -1,6 +1,6 @@
 from .. import loader, utils
 
-tag_id = [5221227286]
+tag_id = [5221227286, 2114070810, 5287789025]
 
 
 class TagAllDeleteMod(loader.Module):
