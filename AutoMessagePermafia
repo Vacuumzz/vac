@@ -33,5 +33,5 @@ class AutoMessageMod(loader.Module):
                 username = str(userent.last_name)
             await message.client.send_message(
                 1939036535,
-                f'Действие: Заблокирован 🚷 <a href="tg://user?id={userid}">{username}</a> за 6 варнов',
+                f'Действие: Заблокирован 🚷 <a href="tg://user?id={userid}">{username}</a> предупреждён (6 из 6)',
             )
