@@ -21,6 +21,7 @@ class WelcomeMod(loader.Module):
             await message.respond("<b>Автостарт включен в этом чате!</b>")
             await message.delete()
             return
+            
         state.remove(message.chat_id)
         self.db.set("AutoStart", "ids", state)
         await message.respond("<b>Автоварн выключен в этом чате!</b>")
@@ -37,7 +38,7 @@ class WelcomeMod(loader.Module):
         # sud_state = self.db.get("AutoStart", "sud_state", [])                          
         if message.sender_id not in [1634167847]:
             return
-            
+           
         if ('Игра окончена !' in message.raw_text.split())
             msgs = []
             x = await message.client.get_messages(message.chat_id, 15)
